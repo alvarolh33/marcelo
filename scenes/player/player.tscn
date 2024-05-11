@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cctjwkrmuxy10"]
 
-[ext_resource type="Texture2D" uid="uid://i7d0sawuh32u" path="res://gfx/sprites/player/cat-face-emoji-512x455-gda5rvrc.png" id="1_3ajn4"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qg1vl"]
+[ext_resource type="Texture2D" uid="uid://bduhrnx2atdb5" path="res://gfx/sprites/player/playerSprites.png" id="2_b8al0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0tchq"]
-radius = 77.41
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usmyd"]
+size = Vector2(8, 14)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(532, 305)
+texture_filter = 1
+position = Vector2(10, 10)
 script = ExtResource("1_qg1vl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_3ajn4")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14.78)
-shape = SubResource("CircleShape2D_0tchq")
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_usmyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b8al0")
+hframes = 6
+vframes = 6
