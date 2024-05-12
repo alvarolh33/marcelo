@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqpv8ei121ql0"]
+[gd_scene load_steps=8 format=3 uid="uid://bqpv8ei121ql0"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_834vw"]
 [ext_resource type="Texture2D" uid="uid://dwdgb2dq2f6fn" path="res://gfx/tileset/Dungeon_Tileset.png" id="1_nboup"]
 [ext_resource type="PackedScene" uid="uid://cctjwkrmuxy10" path="res://scenes/player.tscn" id="2_vhaf0"]
 [ext_resource type="PackedScene" uid="uid://d0j0rnqrdypb1" path="res://scenes/coin.tscn" id="3_kqmgs"]
+[ext_resource type="PackedScene" uid="uid://ffdo3n15xf70" path="res://scenes/slime.tscn" id="4_384o4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wc528"]
 texture = ExtResource("1_nboup")
@@ -336,6 +338,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wc528")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_834vw")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_biwiy")
@@ -362,3 +365,6 @@ position = Vector2(37, 5)
 
 [node name="Coin5" parent="." instance=ExtResource("3_kqmgs")]
 position = Vector2(52, -19)
+
+[node name="Slime" parent="." instance=ExtResource("4_384o4")]
+position = Vector2(-54, 39)
