@@ -2,10 +2,11 @@ class_name Entity
 
 extends CharacterBody2D
 
-const SPEED: float = 70.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-var direction: Vector2 = Vector2(0.0, 0.0)
-var prev_direction: Vector2 = Vector2(0.0, 0.0)
+var dead: bool = false
+var speed: float = 70.0
+var direction: Vector2 = Vector2.ZERO
+var prev_direction: Vector2 = Vector2.ZERO
 
 func get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
@@ -16,12 +17,16 @@ func _physics_process(delta):
 	if !direction.is_zero_approx():
 		prev_direction = direction
 	else:
-		direction = Vector2(0.0, 0.0)
+		direction = Vector2.ZERO
 
-	velocity = direction * SPEED
+	velocity = direction * speed
 	move_and_slide()
 
 func _process(delta):
+	if dead:
+		animated_sprite.play("Die")
+		return
+
 	# Invertir el sprite
 	if direction.x > 0:
 		animated_sprite.flip_h = false
@@ -30,15 +35,19 @@ func _process(delta):
 
 	# Ejecutar las animaciones
 	if direction.length() == 0:
-		if prev_direction.x != 0:
+		if abs(prev_direction.x) > abs(prev_direction.y):
 			animated_sprite.play("IdleSide")
 		elif prev_direction.y < 0:
 			animated_sprite.play("IdleUp")
 		else:
 			animated_sprite.play("IdleDown")
-	elif direction.y < 0:
-		animated_sprite.play("WalkUp")
-	elif direction.y > 0:
-		animated_sprite.play("WalkDown")
+	elif abs(direction.y) > abs(direction.x):
+		if direction.y < 0:
+			animated_sprite.play("WalkUp")
+		else:
+			animated_sprite.play("WalkDown")
 	else:
 		animated_sprite.play("WalkSide")
+
+func die():
+	dead = true

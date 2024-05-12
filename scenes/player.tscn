@@ -270,7 +270,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_khsn6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Die",
 "speed": 10.0
 }, {
@@ -426,9 +426,10 @@ script = ExtResource("1_rxe2g")
 z_index = 5
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_40x71")
-animation = &"WalkSide"
+animation = &"Die"
 autoplay = "IdleSide"
-frame_progress = 0.236152
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_usmyd")
