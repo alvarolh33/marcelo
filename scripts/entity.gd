@@ -12,6 +12,8 @@ func get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
 
 func _physics_process(delta):
+	if dead:
+		return
 	# Obtener el vector direction
 	direction = get_direction()
 	if !direction.is_zero_approx():
