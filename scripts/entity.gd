@@ -24,7 +24,10 @@ func _physics_process(delta):
 
 func _process(delta):
 	if dead:
-		animated_sprite.play("Die")
+		if animated_sprite.animation == "Die" && animated_sprite.frame == 2:
+			animated_sprite.pause()
+		else:
+			animated_sprite.play("Die")
 		return
 
 	# Invertir el sprite
