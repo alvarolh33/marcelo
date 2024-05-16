@@ -26,3 +26,10 @@ func get_direction() -> Vector2:
 	else:
 		direction = position.direction_to(player_position)
 	return direction
+
+func take_damage():
+	print("AAA me pegaron")
+	return
+
+func atack():
+	print("Enemigo ataca")

@@ -386,7 +386,7 @@ position = Vector2(0, 0)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 
-[node name="Slime" parent="." instance=ExtResource("4_384o4")]
+[node name="Slime" parent="." groups=["Hit"] instance=ExtResource("4_384o4")]
 position = Vector2(-54, 39)
 collision_layer = 4
 
