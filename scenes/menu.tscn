@@ -47,6 +47,24 @@ text = "       La mazmorra de Marcelo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Profile" type="Button" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 119.0
+offset_right = 33.0
+offset_bottom = 135.0
+
+[node name="Languages" type="Button" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 0
+offset_left = 223.0
+offset_top = 116.0
+offset_right = 240.0
+offset_bottom = 133.0
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Profile" to="." method="_on_profile_pressed"]
+[connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]
