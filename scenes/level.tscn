@@ -388,11 +388,13 @@ position_smoothing_enabled = true
 
 [node name="Slime" parent="." instance=ExtResource("4_384o4")]
 position = Vector2(-54, 39)
+collision_layer = 4
 
 [node name="DeathArea" parent="." instance=ExtResource("10_gxg2u")]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2(101, 54)
+position = Vector2(102, 54)
 shape = SubResource("RectangleShape2D_b1lut")
 
 [node name="Coins" type="Node" parent="."]

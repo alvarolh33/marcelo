@@ -39,20 +39,23 @@ func _process(delta):
 		animated_sprite.flip_h = true
 
 	# Ejecutar las animaciones
-	if direction.length() == 0:
-		if abs(prev_direction.x) > abs(prev_direction.y):
-			animated_sprite.play("IdleSide")
-		elif prev_direction.y < 0:
-			animated_sprite.play("IdleUp")
-		else:
-			animated_sprite.play("IdleDown")
-	elif abs(direction.y) > abs(direction.x):
-		if direction.y < 0:
-			animated_sprite.play("WalkUp")
-		else:
-			animated_sprite.play("WalkDown")
-	else:
-		animated_sprite.play("WalkSide")
+	select_animation(direction, prev_direction, animated_sprite)
 
 func die():
 	dead = true
+
+func select_animation(dir: Vector2, prev_dir: Vector2, anim_sprite: AnimatedSprite2D):
+	if dir.length() == 0:
+		if abs(prev_dir.x) > abs(prev_dir.y):
+			anim_sprite.play("IdleSide")
+		elif prev_dir.y < 0:
+			anim_sprite.play("IdleUp")
+		else:
+			anim_sprite.play("IdleDown")
+	elif abs(dir.y) > abs(dir.x):
+		if dir.y < 0:
+			anim_sprite.play("WalkUp")
+		else:
+			anim_sprite.play("WalkDown")
+	else:
+		anim_sprite.play("WalkSide")
