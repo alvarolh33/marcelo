@@ -11,7 +11,7 @@ func _on_death_area_entered(body):
 func trying_to_attack():
 	return Input.is_action_just_pressed("Atacar") && !attack_in_cooldown
 
-func atack():
+func attack():
 	$Area2D/CollisionShape2D.disabled = false
 	is_attacking = true
 	attack_in_cooldown = true
@@ -22,8 +22,6 @@ func atack():
 func _on_area_2d_body_entered(body):	 #Alguien fue atacado
 	if body.is_in_group("Hit"):
 		body.take_damage()
-	else:
-		print("Jesse")
 
 func _on_attacking_timeout():
 	is_attacking = false

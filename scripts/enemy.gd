@@ -29,7 +29,6 @@ func get_direction() -> Vector2:
 
 func take_damage():
 	print("AAA me pegaron")
-	return
 
-func atack():
+func attack():
 	print("Enemigo ataca")

@@ -44,7 +44,7 @@ func _process(delta):
 		animated_sprite.flip_h = true
 	
 	if trying_to_attack():
-		atack()
+		attack()
 	
 	# Ejecutar las animaciones
 	select_animation(direction, prev_direction, animated_sprite)	
@@ -52,7 +52,7 @@ func _process(delta):
 func die():
 	dead = true
 
-func atack():
+func attack():
 	print("Estoy atacando")
 
 func select_animation(dir: Vector2, prev_dir: Vector2, anim_sprite: AnimatedSprite2D):
