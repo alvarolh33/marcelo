@@ -15,14 +15,13 @@ layout_mode = 2
 text = "Perfil Administrador"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 16.0
 offset_top = 32.0
-offset_right = 240.0
+offset_right = 258.0
 offset_bottom = 128.0
 
 [node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Contenido explicito"
+text = "Ocultar contenido explicito"
 
 [node name="OptionButton2" type="OptionButton" parent="."]
 offset_left = 159.0
