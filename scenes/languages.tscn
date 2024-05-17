@@ -18,9 +18,9 @@ text = "Idiomas
 [node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(5, 5)
 offset_left = 16.0
-offset_top = 119.0
-offset_right = 33.0
-offset_bottom = 135.0
+offset_top = 120.0
+offset_right = 32.0
+offset_bottom = 136.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 50.0
