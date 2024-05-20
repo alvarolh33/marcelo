@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5quy5cl0nlg"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_gg6jm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gg6jm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 35.0
+offset_right = 180.0
+offset_bottom = 115.0
+
+[node name="Volume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="Graphics" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Graphics"
+
+[node name="Return to menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 123.0
+offset_right = 21.0
+offset_bottom = 141.0
+
+[connection signal="pressed" from="VBoxContainer/Volume" to="." method="_on_volume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Graphics" to="." method="_on_graphics_pressed"]
+[connection signal="pressed" from="Return to menu" to="." method="_on_return_to_menu_pressed"]

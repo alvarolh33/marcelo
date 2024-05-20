@@ -67,9 +67,10 @@ offset_top = 116.0
 offset_right = 240.0
 offset_bottom = 133.0
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Profile" to="." method="_on_profile_pressed"]
 [connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]

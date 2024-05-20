@@ -14,3 +14,6 @@ func _on_languages_pressed():
 	
 func _on_profile_pressed():
 	get_tree().change_scene_to_file("res://scenes/profile.tscn")
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file("res://scenes/options.tscn")
