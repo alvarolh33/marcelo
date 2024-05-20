@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://p5quy5cl0nlg"]
+[gd_scene load_steps=3 format=3 uid="uid://p5quy5cl0nlg"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gg6jm"]
+[ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_wpypr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,13 +27,21 @@ text = "Volume"
 layout_mode = 2
 text = "Graphics"
 
-[node name="Return to menu" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 123.0
-offset_right = 21.0
-offset_bottom = 141.0
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 32.0
+offset_bottom = 136.0
+
+[node name="Buttons1x2" type="Sprite2D" parent="Back"]
+position = Vector2(8, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("2_wpypr")
+hframes = 16
+vframes = 2
+frame = 11
 
 [connection signal="pressed" from="VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Graphics" to="." method="_on_graphics_pressed"]
-[connection signal="pressed" from="Return to menu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_return_to_menu_pressed"]

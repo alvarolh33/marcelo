@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://06lkmm35tkfe"]
+[gd_scene load_steps=3 format=3 uid="uid://06lkmm35tkfe"]
 
 [ext_resource type="Script" path="res://scripts/admin_profile.gd" id="1_d0bc0"]
+[ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_tfajy"]
 
 [node name="AdminProfile" type="Node2D"]
 script = ExtResource("1_d0bc0")
@@ -54,5 +55,13 @@ offset_left = 16.0
 offset_top = 120.0
 offset_right = 32.0
 offset_bottom = 136.0
+
+[node name="Buttons1x2" type="Sprite2D" parent="Back"]
+position = Vector2(8, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("2_tfajy")
+hframes = 16
+vframes = 2
+frame = 11
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
