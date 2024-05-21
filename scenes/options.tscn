@@ -12,20 +12,50 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gg6jm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Volume" type="Label" parent="."]
 layout_mode = 0
-offset_left = 75.0
+offset_left = 23.0
 offset_top = 35.0
-offset_right = 180.0
-offset_bottom = 115.0
-
-[node name="Volume" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+offset_right = 82.0
+offset_bottom = 58.0
 text = "Volume"
 
-[node name="Graphics" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Volume Bar" type="HSlider" parent="Volume"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 4.0
+offset_right = 212.0
+offset_bottom = 20.0
+value = 50.0
+ticks_on_borders = true
+
+[node name="Graphics" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 71.0
+offset_right = 93.0
+offset_bottom = 94.0
 text = "Graphics"
+
+[node name="Graphics Option" type="OptionButton" parent="Graphics"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.15942
+anchor_top = 0.217391
+anchor_right = 1.81159
+anchor_bottom = 1.08696
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 63.0
+offset_bottom = 4.0
+item_count = 3
+selected = 0
+popup/item_0/text = "High"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Low"
+popup/item_2/id = 2
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -42,6 +72,4 @@ hframes = 16
 vframes = 2
 frame = 11
 
-[connection signal="pressed" from="VBoxContainer/Volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Graphics" to="." method="_on_graphics_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_return_to_menu_pressed"]
