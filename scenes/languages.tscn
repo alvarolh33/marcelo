@@ -13,7 +13,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
-text = "Idiomas
+text = "Languages
 "
 
 [node name="Back" type="Button" parent="."]
@@ -23,7 +23,7 @@ offset_top = 120.0
 offset_right = 32.0
 offset_bottom = 136.0
 
-[node name="Buttons1x2" type="Sprite2D" parent="Back"]
+[node name="Cross" type="Sprite2D" parent="Back"]
 position = Vector2(8, 8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_x6dbp")
@@ -40,40 +40,40 @@ offset_bottom = 132.0
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="Spanish" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(165, 20)
+[node name="Chinese" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "Español"
+text = "Chinese
+"
 
 [node name="English" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(165, 20)
 layout_mode = 2
-text = "Inglés"
+text = "English"
 
 [node name="French" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "Francés"
-
-[node name="Portuguese" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-text = "Portugués"
+text = "French"
 
 [node name="German" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-text = "Alemán"
+text = "German"
 
 [node name="Italian" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "Italiano"
+text = "Italian"
 
-[node name="Chinese" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Portuguese" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "Chino
-"
+text = "Portuguese"
+
+[node name="Spanish" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+text = "Spanish"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

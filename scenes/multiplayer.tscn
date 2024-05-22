@@ -26,7 +26,7 @@ offset_top = 120.0
 offset_right = 32.0
 offset_bottom = 136.0
 
-[node name="Buttons1x2" type="Sprite2D" parent="Back"]
+[node name="Cross" type="Sprite2D" parent="Back"]
 position = Vector2(8, 8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_urlrf")

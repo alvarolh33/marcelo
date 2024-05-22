@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://duj37nvuqnjc0"]
+
+[ext_resource type="Script" path="res://scripts/profile_settings.gd" id="1_ttpo0"]
+[ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="1_v7aur"]
+
+[node name="ProfileSettings" type="Node2D"]
+script = ExtResource("1_ttpo0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 256.0
+offset_bottom = 23.0
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 216.0
+offset_bottom = 55.0
+text = "Customize profile"
+
+[node name="Button2" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 58.0
+offset_right = 216.0
+offset_bottom = 89.0
+text = "Delete profile"
+
+[node name="Button3" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 92.0
+offset_right = 216.0
+offset_bottom = 123.0
+text = "Change PIN"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 32.0
+offset_bottom = 136.0
+
+[node name="Cross" type="Sprite2D" parent="Back"]
+position = Vector2(8, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("1_v7aur")
+hframes = 16
+vframes = 2
+frame = 11
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

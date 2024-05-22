@@ -13,7 +13,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
-text = "Perfiles
+text = "Profile
 "
 
 [node name="Back" type="Button" parent="."]
@@ -22,7 +22,7 @@ offset_top = 120.0
 offset_right = 32.0
 offset_bottom = 136.0
 
-[node name="Buttons1x2" type="Sprite2D" parent="Back"]
+[node name="Cross" type="Sprite2D" parent="Back"]
 position = Vector2(8, 8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_7xwy1")
@@ -42,7 +42,7 @@ layout_mode = 2
 [node name="player1" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(165, 20)
 layout_mode = 2
-text = "Jugador 1"
+text = "Player 1"
 
 [node name="Admin" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -64,7 +64,7 @@ offset_top = 120.0
 offset_right = 240.0
 offset_bottom = 136.0
 
-[node name="Buttons1x" type="Sprite2D" parent="Settings"]
+[node name="Settings" type="Sprite2D" parent="Settings"]
 position = Vector2(8, 8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_7xwy1")
@@ -74,3 +74,4 @@ frame = 14
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Admin" to="." method="_on_admin_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
