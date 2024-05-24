@@ -19,7 +19,13 @@ func _on_death_area_entered(body):
 	super.die()
 
 func attack():
-	$Area2D/CollisionShape2D.disabled = false
+	var overlapping_objects = $Area2D.get_overlapping_areas()
+	for area in overlapping_objects:
+		if area.is_in_group("enemy"):
+			area.get_parent().take_damage()
+	
+	#$Area2D/CollisionShape2D.disabled = true
+	
 	is_attacking = true
 	attack_in_cooldown = true
 	$Attacking.start()
@@ -32,7 +38,7 @@ func _on_area_2d_body_entered(body):	 #Alguien fue atacado
 
 func _on_attacking_timeout():
 	is_attacking = false
-	$Area2D/CollisionShape2D.disabled = true
+	#$Area2D/CollisionShape2D.disabled = true
 
 func _on_attack_cooldown_timeout():
 	attack_in_cooldown = false
