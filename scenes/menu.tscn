@@ -90,8 +90,8 @@ text = "Quit"
 
 [connection signal="pressed" from="Profile" to="." method="_on_profile_pressed"]
 [connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

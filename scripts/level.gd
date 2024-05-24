@@ -9,4 +9,6 @@ func _ready():
 	camera.limit_smoothed = true
 
 func _process(delta):
-	enemy.set_player_position(player.position)
+	if enemy != null:
+		enemy.set_player_position(player.position)
+	
