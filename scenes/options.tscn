@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://p5quy5cl0nlg"]
+[gd_scene load_steps=5 format=3 uid="uid://p5quy5cl0nlg"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gg6jm"]
+[ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="2_5ywi5"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_wpypr"]
+[ext_resource type="Theme" uid="uid://chvahglekuifq" path="res://gui_theme.tres" id="3_75l08"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,12 +14,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gg6jm")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.4, 3.6)
+texture = ExtResource("2_5ywi5")
+expand_mode = 1
+
 [node name="Volume" type="Label" parent="."]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 35.0
 offset_right = 82.0
 offset_bottom = 58.0
+theme = ExtResource("3_75l08")
 text = "Volume"
 
 [node name="Volume Bar" type="HSlider" parent="Volume"]
@@ -26,6 +37,7 @@ offset_left = 78.0
 offset_top = 4.0
 offset_right = 212.0
 offset_bottom = 20.0
+theme = ExtResource("3_75l08")
 value = 50.0
 ticks_on_borders = true
 
@@ -35,6 +47,7 @@ offset_left = 24.0
 offset_top = 71.0
 offset_right = 93.0
 offset_bottom = 94.0
+theme = ExtResource("3_75l08")
 text = "Graphics"
 
 [node name="Graphics Option" type="OptionButton" parent="Graphics"]
@@ -44,10 +57,10 @@ anchor_left = 1.15942
 anchor_top = 0.217391
 anchor_right = 1.81159
 anchor_bottom = 1.08696
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 63.0
-offset_bottom = 4.0
+offset_left = -0.999985
+offset_top = -6.99999
+offset_right = 63.0003
+offset_bottom = 3.99992
 item_count = 3
 selected = 0
 popup/item_0/text = "High"
