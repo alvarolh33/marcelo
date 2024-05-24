@@ -440,7 +440,6 @@ shape = SubResource("RectangleShape2D_usmyd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(16, 0.5)
 shape = SubResource("RectangleShape2D_4sa4m")
-disabled = true
 
 [node name="Attacking" type="Timer" parent="."]
 process_callback = 0

@@ -257,6 +257,8 @@ sprite_frames = SubResource("SpriteFrames_b7tx8")
 animation = &"IdleDown"
 autoplay = "IdleDown"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_rm7aw")
