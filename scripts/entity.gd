@@ -3,11 +3,13 @@ class_name Entity
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var loot = preload("res://scenes/coin.tscn")
 var dead: bool = false
 var is_attacking: bool = false
 var speed: float = 70.0
 var direction: Vector2 = Vector2.ZERO
 var prev_direction: Vector2 = Vector2.ZERO
+ 
 
 
 func get_direction() -> Vector2:
@@ -50,7 +52,13 @@ func _process(delta):
 	select_animation(direction, prev_direction, animated_sprite)	
 
 func die():
+	print(self, " ha muerto")
 	dead = true
+
+func drop_loot():
+	var coin = loot.instantiate()
+	coin.global_position = global_position
+	get_tree().get_root().add_child(coin)
 
 func attack():
 	print("Estoy atacando")
