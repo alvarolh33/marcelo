@@ -5,11 +5,18 @@ var attack_in_cooldown: bool = false
 func _ready():
 	position = Vector2.ZERO
 
-func _on_death_area_entered(body):
-	super.die()
+func _process(delta):
+	super(delta)
+	if Input.is_action_pressed("run"):
+		speed = 100
+	else:
+		speed = 70
 
 func trying_to_attack():
-	return Input.is_action_just_pressed("Atacar") && !attack_in_cooldown
+	return Input.is_action_just_pressed("attack") && !attack_in_cooldown
+
+func _on_death_area_entered(body):
+	super.die()
 
 func attack():
 	$Area2D/CollisionShape2D.disabled = false
