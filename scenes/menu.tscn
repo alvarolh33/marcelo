@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctnbi4nh1yc5"]
+[gd_scene load_steps=8 format=3 uid="uid://ctnbi4nh1yc5"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_mu88j"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_gvtwm"]
+[ext_resource type="FontFile" uid="uid://c4u1ugc4348y7" path="res://gfx/ui/MinimalPixel v2.ttf" id="2_v0e3l"]
+[ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="2_xf6wx"]
 [ext_resource type="Texture2D" uid="uid://ch68g8x2y8v1o" path="res://gfx/ui/gui/GUI_2x.png" id="3_girdh"]
+[ext_resource type="Theme" uid="uid://chvahglekuifq" path="res://gui_theme.tres" id="5_jrtmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl2mf"]
+font = ExtResource("2_v0e3l")
+font_size = 19
+font_color = Color(0.858257, 0.00334167, 0.385848, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +23,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mu88j")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.4, 3.6)
+texture = ExtResource("2_xf6wx")
+expand_mode = 1
+
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1.0
@@ -21,7 +40,8 @@ offset_bottom = 23.0
 
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
-text = "       La mazmorra de Marcelo"
+text = "  La mazmorra de Marcelo"
+label_settings = SubResource("LabelSettings_vl2mf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -62,6 +82,7 @@ offset_left = 16.0
 offset_top = 32.0
 offset_right = 120.0
 offset_bottom = 63.0
+theme = ExtResource("5_jrtmk")
 text = "Single Player"
 
 [node name="Multiplayer" type="Button" parent="."]
@@ -70,6 +91,7 @@ offset_left = 128.0
 offset_top = 32.0
 offset_right = 240.0
 offset_bottom = 63.0
+theme = ExtResource("5_jrtmk")
 text = "Multiplayer"
 
 [node name="Options" type="Button" parent="."]
@@ -78,6 +100,7 @@ offset_left = 48.0
 offset_top = 69.0
 offset_right = 208.0
 offset_bottom = 100.0
+theme = ExtResource("5_jrtmk")
 text = "Options"
 
 [node name="Exit" type="Button" parent="."]
@@ -86,6 +109,7 @@ offset_left = 48.0
 offset_top = 105.0
 offset_right = 208.0
 offset_bottom = 136.0
+theme = ExtResource("5_jrtmk")
 text = "Quit"
 
 [connection signal="pressed" from="Profile" to="." method="_on_profile_pressed"]

@@ -9,4 +9,6 @@ func _ready():
 	camera.limit_smoothed = true
 
 func _process(delta):
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	enemy.set_player_position(player.position)

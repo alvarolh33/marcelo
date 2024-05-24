@@ -1,5 +1,11 @@
 extends Control
 
+func _process(_delta):
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
+	if Input.is_action_just_pressed("enter"):
+		get_tree().change_scene_to_file("res://scenes/level.tscn")
+
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/level.tscn")
 
