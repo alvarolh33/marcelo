@@ -10,7 +10,17 @@ var speed: float = 70.0
 var direction: Vector2 = Vector2.ZERO
 var prev_direction: Vector2 = Vector2.ZERO
 var vidas: int = 3
+var received_damage: int = 0
 
+func take_damage():
+	if received_damage == 0:
+		received_damage = 20
+		animated_sprite.modulate = Color(1.0, 0.0, 0.0, 0.5)
+	vidas -= 1
+	print("AAA me pegaron")
+	print(self , " tengo " , vidas)
+	if vidas < 0:
+		die()
 
 func get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
@@ -20,7 +30,12 @@ func trying_to_attack():
 
 func _physics_process(delta):
 	if dead:
+		animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		return
+	if received_damage != 0:
+		received_damage -= 1
+		if received_damage == 0:
+			animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	# Obtener el vector direction
 	direction = get_direction()
 	if !direction.is_zero_approx():

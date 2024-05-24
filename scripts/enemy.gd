@@ -5,7 +5,7 @@ extends Entity
 const TRIG_DIST = 60
 const SURR_DIST = 80
 var player_position: Vector2 = Vector2.ZERO
-var rng = RandomNumberGenerator.new();
+#var rng = RandomNumberGenerator.new();
 
 
 func set_player_position(pos: Vector2):
@@ -28,19 +28,10 @@ func get_direction() -> Vector2:
 		direction = position.direction_to(player_position)
 	return direction
 
-func take_damage():
-	vidas -= 1
-	print("AAA me pegaron")
-	print(self , " tengo " , vidas)
-	if vidas < 0:
-		die()
-
 func die():
 	print(self, " ha muerto")
 	dead = true
 	drop_loot()
-	#queue_free()
-
 
 func attack():
 	print("Enemigo ataca")
