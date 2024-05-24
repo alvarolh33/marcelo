@@ -39,7 +39,7 @@ func die():
 	print(self, " ha muerto")
 	dead = true
 	drop_loot()
-	queue_free()
+	#queue_free()
 
 
 func attack():

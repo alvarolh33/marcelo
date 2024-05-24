@@ -35,6 +35,7 @@ func _process(delta):
 	if dead:
 		if animated_sprite.animation == "Die" && animated_sprite.frame == 2:
 			animated_sprite.pause()
+			queue_free()
 		else:
 			animated_sprite.play("Die")
 		return

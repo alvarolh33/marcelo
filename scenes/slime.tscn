@@ -1,7 +1,27 @@
-[gd_scene load_steps=35 format=3 uid="uid://ffdo3n15xf70"]
+[gd_scene load_steps=40 format=3 uid="uid://ffdo3n15xf70"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_aprgh"]
 [ext_resource type="Texture2D" uid="uid://dscy42nawx3ns" path="res://gfx/sprites/enemies/slime.png" id="1_ohmdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w8no"]
+atlas = ExtResource("1_ohmdm")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7fk"]
+atlas = ExtResource("1_ohmdm")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec0sh"]
+atlas = ExtResource("1_ohmdm")
+region = Rect2(64, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwxjd"]
+atlas = ExtResource("1_ohmdm")
+region = Rect2(96, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwefy"]
+atlas = ExtResource("1_ohmdm")
+region = Rect2(128, 384, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ej2q"]
 atlas = ExtResource("1_ohmdm")
@@ -125,6 +145,26 @@ region = Rect2(160, 160, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b7tx8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w8no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec0sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwxjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwefy")
+}],
+"loop": true,
+"name": &"Die",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2ej2q")
@@ -254,8 +294,9 @@ script = ExtResource("1_aprgh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b7tx8")
-animation = &"IdleDown"
+animation = &"Die"
 autoplay = "IdleDown"
+frame_progress = 0.515216
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 
