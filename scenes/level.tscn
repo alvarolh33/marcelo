@@ -387,7 +387,21 @@ layer_1/tile_data = PackedInt32Array(-1048577, 393216, 6, -1114112, 458752, 6)
 position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
+
+[node name="Control" type="Control" parent="Player/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Player/Camera2D/Control"]
+layout_mode = 0
+offset_left = -127.0
+offset_top = -69.0
+offset_right = -81.0
+offset_bottom = -46.0
+text = "Vidas:"
+vertical_alignment = 1
 
 [node name="Slime" parent="." groups=["Hit"] instance=ExtResource("4_384o4")]
 position = Vector2(-54, 39)

@@ -6,7 +6,6 @@ const TRIG_DIST = 60
 const SURR_DIST = 80
 var player_position: Vector2 = Vector2.ZERO
 var rng = RandomNumberGenerator.new();
-var vidas: int = 3
 
 
 func set_player_position(pos: Vector2):

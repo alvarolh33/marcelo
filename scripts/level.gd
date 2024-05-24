@@ -5,8 +5,7 @@ extends Node2D
 @onready var camera = $Player/Camera2D
 
 func _ready():
-	camera.position_smoothing_enabled = true
-	camera.limit_smoothed = true
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("escape"):

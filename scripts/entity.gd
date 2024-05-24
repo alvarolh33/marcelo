@@ -9,7 +9,7 @@ var is_attacking: bool = false
 var speed: float = 70.0
 var direction: Vector2 = Vector2.ZERO
 var prev_direction: Vector2 = Vector2.ZERO
- 
+var vidas: int = 3
 
 
 func get_direction() -> Vector2:
