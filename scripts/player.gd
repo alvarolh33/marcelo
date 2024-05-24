@@ -1,12 +1,28 @@
 extends Entity
 
 var attack_in_cooldown: bool = false
+@onready var attack_hitbox = $AttackHitbox/CollisionShape2D
 
 func _ready():
 	position = Vector2.ZERO
 
 func _process(delta):
 	super(delta)
+	match animated_sprite.animation:
+		"IdleUp", "WalkUp":
+			attack_hitbox.rotation = -(PI / 2)
+			attack_hitbox.position = Vector2(0.0, -16.0)
+		"IdleDown", "WalkDown":
+			attack_hitbox.rotation = PI / 2
+			attack_hitbox.position = Vector2(0.0, 16.0)
+		"IdleSide", "WalkSide":
+			if prev_direction.x > 0:
+				attack_hitbox.rotation = 0
+				attack_hitbox.position = Vector2(16.0, 0.0)
+			else:
+				attack_hitbox.rotation = PI
+				attack_hitbox.position = Vector2(-16.0, 0.0)
+		
 	if Input.is_action_pressed("run"):
 		speed = 100
 	else:
@@ -19,7 +35,7 @@ func _on_death_area_entered(body):
 	super.die()
 
 func attack():
-	var overlapping_objects = $Area2D.get_overlapping_areas()
+	var overlapping_objects = $AttackHitbox.get_overlapping_areas()
 	for area in overlapping_objects:
 		if area.is_in_group("enemy"):
 			area.get_parent().take_damage()
