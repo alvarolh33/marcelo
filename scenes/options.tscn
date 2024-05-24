@@ -16,6 +16,7 @@ script = ExtResource("1_gg6jm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(6.4, 3.6)
@@ -61,6 +62,7 @@ offset_left = -0.999985
 offset_top = -6.99999
 offset_right = 63.0003
 offset_bottom = 3.99992
+alignment = 1
 item_count = 3
 selected = 0
 popup/item_0/text = "High"

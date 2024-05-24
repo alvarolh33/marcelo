@@ -296,7 +296,7 @@ script = ExtResource("1_aprgh")
 sprite_frames = SubResource("SpriteFrames_b7tx8")
 animation = &"Die"
 autoplay = "IdleDown"
-frame_progress = 0.515216
+frame_progress = 0.301017
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 
