@@ -36,5 +36,12 @@ func take_damage():
 	if vidas < 0:
 		die()
 
+func die():
+	print(self, " ha muerto")
+	dead = true
+	drop_loot()
+	queue_free()
+
+
 func attack():
 	print("Enemigo ataca")

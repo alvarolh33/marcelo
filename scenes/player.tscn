@@ -438,7 +438,7 @@ shape = SubResource("RectangleShape2D_usmyd")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, 0.5)
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_4sa4m")
 
 [node name="Attacking" type="Timer" parent="."]

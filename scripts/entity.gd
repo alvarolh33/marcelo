@@ -54,8 +54,6 @@ func _process(delta):
 func die():
 	print(self, " ha muerto")
 	dead = true
-	drop_loot()
-	queue_free()
 
 func drop_loot():
 	var coin = loot.instantiate()
