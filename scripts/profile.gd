@@ -6,7 +6,7 @@ func _on_back_pressed():
 
 
 func _on_admin_pressed():
-	get_tree().change_scene_to_file("res://scenes/admin_profile.tscn")
+	get_tree().change_scene_to_file("res://scenes/lock.tscn")
 
 
 func _on_settings_pressed():

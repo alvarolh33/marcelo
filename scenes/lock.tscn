@@ -1,0 +1,196 @@
+[gd_scene load_steps=3 format=3 uid="uid://bopqu00xc11s3"]
+
+[ext_resource type="Script" path="res://scenes/lock.gd" id="1_v8g1s"]
+[ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_q5fqh"]
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_v8g1s")
+
+[node name="PIN" type="Label" parent="."]
+offset_right = 256.0
+offset_bottom = 23.0
+text = "PIN"
+horizontal_alignment = 1
+
+[node name="Next" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 32.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 7
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="L_Key_1" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 24.0
+offset_right = 96.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 7
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="L_Key_2" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 24.0
+offset_right = 120.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 7
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="L_Key_3" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 7
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="L_Key_4" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 7
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Button_1" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 88.0
+offset_right = 116.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 11
+text = "1"
+
+[node name="Button_2" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 88.0
+offset_right = 140.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 11
+text = "2"
+
+[node name="Button_3" type="Button" parent="."]
+offset_left = 140.0
+offset_top = 88.0
+offset_right = 164.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 11
+text = "3"
+
+[node name="Button_4" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 64.0
+offset_right = 116.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 11
+text = "4"
+
+[node name="Button_5" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 64.0
+offset_right = 140.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 11
+text = "5"
+
+[node name="Button_6" type="Button" parent="."]
+offset_left = 140.0
+offset_top = 64.0
+offset_right = 164.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 11
+text = "6"
+
+[node name="Button_7" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 40.0
+offset_right = 116.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 11
+text = "7"
+
+[node name="Button_8" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 11
+text = "8"
+
+[node name="Button_9" type="Button" parent="."]
+offset_left = 140.0
+offset_top = 40.0
+offset_right = 164.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 11
+text = "9"
+
+[node name="Button_0" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 112.0
+offset_right = 116.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 11
+text = "0"
+
+[node name="Button_DEL" type="Button" parent="."]
+offset_left = 164.0
+offset_top = 64.0
+offset_right = 193.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 11
+text = "DEL"
+
+[node name="Button_ENT" type="Button" parent="."]
+offset_left = 164.0
+offset_top = 88.0
+offset_right = 193.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 11
+text = "ENT"
+
+[node name="Button_ON" type="Button" parent="."]
+offset_left = 164.0
+offset_top = 112.0
+offset_right = 193.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 11
+text = "ON"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 32.0
+offset_bottom = 136.0
+
+[node name="Cross" type="Sprite2D" parent="Back"]
+position = Vector2(8, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("2_q5fqh")
+hframes = 16
+vframes = 2
+frame = 11
+
+[connection signal="pressed" from="Button_1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button_2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button_3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button_4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button_5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button_6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button_7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button_8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button_9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button_0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Button_DEL" to="." method="_on_button_del_pressed"]
+[connection signal="pressed" from="Button_ENT" to="." method="_on_button_ent_pressed"]
+[connection signal="pressed" from="Button_ON" to="." method="_on_button_on_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
