@@ -34,9 +34,10 @@ expand_mode = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 256.0
-offset_bottom = 23.0
+offset_left = -2.94
+offset_top = 7.445
+offset_right = 252.06
+offset_bottom = 30.445
 
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
@@ -76,7 +77,15 @@ hframes = 16
 vframes = 2
 frame = 15
 
-[node name="Start" type="Button" parent="."]
+[node name="Panel" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 295.0
+offset_bottom = 175.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Start" type="Button" parent="Panel"]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 32.0
@@ -85,7 +94,7 @@ offset_bottom = 63.0
 theme = ExtResource("5_jrtmk")
 text = "Single Player"
 
-[node name="Multiplayer" type="Button" parent="."]
+[node name="Multiplayer" type="Button" parent="Panel"]
 layout_mode = 2
 offset_left = 128.0
 offset_top = 32.0
@@ -94,7 +103,7 @@ offset_bottom = 63.0
 theme = ExtResource("5_jrtmk")
 text = "Multiplayer"
 
-[node name="Options" type="Button" parent="."]
+[node name="Options" type="Button" parent="Panel"]
 layout_mode = 2
 offset_left = 48.0
 offset_top = 69.0
@@ -103,7 +112,7 @@ offset_bottom = 100.0
 theme = ExtResource("5_jrtmk")
 text = "Options"
 
-[node name="Exit" type="Button" parent="."]
+[node name="Exit" type="Button" parent="Panel"]
 layout_mode = 2
 offset_left = 48.0
 offset_top = 105.0
@@ -114,8 +123,8 @@ text = "Quit"
 
 [connection signal="pressed" from="Profile" to="." method="_on_profile_pressed"]
 [connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Start" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/Start" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

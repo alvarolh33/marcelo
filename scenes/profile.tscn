@@ -1,15 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://w068qx3cet6b"]
+[gd_scene load_steps=5 format=3 uid="uid://w068qx3cet6b"]
 
 [ext_resource type="Script" path="res://scripts/profile.gd" id="1_hqc3i"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_7xwy1"]
+[ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="2_bw675"]
 [ext_resource type="Theme" uid="uid://chvahglekuifq" path="res://gui_theme.tres" id="3_jhtj8"]
 
 [node name="Profile" type="Node2D"]
 script = ExtResource("1_hqc3i")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.4, 3.6)
+texture = ExtResource("2_bw675")
+expand_mode = 1
+
 [node name="BoxContainer" type="BoxContainer" parent="."]
+offset_top = 5.0
 offset_right = 256.0
-offset_bottom = 23.0
+offset_bottom = 28.0
 alignment = 1
 
 [node name="Label" type="Label" parent="BoxContainer"]
@@ -31,39 +41,6 @@ hframes = 16
 vframes = 2
 frame = 11
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 51.0
-offset_top = 27.0
-offset_right = 217.0
-offset_bottom = 127.0
-scale = Vector2(1, 1.16)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-
-[node name="player1" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(165, 20)
-layout_mode = 2
-theme = ExtResource("3_jhtj8")
-text = "Player 1"
-
-[node name="Admin" type="Button" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_jhtj8")
-text = "Admin
-"
-
-[node name="Kids" type="Button" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_jhtj8")
-text = "Kids"
-
-[node name="Add" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(165, 20)
-layout_mode = 2
-theme = ExtResource("3_jhtj8")
-text = "+"
-
 [node name="Settings" type="Button" parent="."]
 offset_left = 224.0
 offset_top = 120.0
@@ -78,6 +55,54 @@ hframes = 16
 vframes = 2
 frame = 14
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 21.0
+offset_right = 284.0
+offset_bottom = 165.0
+scale = Vector2(0.7, 0.7)
+
+[node name="player1" type="Button" parent="Control"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+offset_left = 58.5714
+offset_top = 24.2857
+offset_right = 223.571
+offset_bottom = 46.2857
+theme = ExtResource("3_jhtj8")
+text = "Player 1"
+
+[node name="Admin" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 57.0
+offset_right = 221.0
+offset_bottom = 77.0
+theme = ExtResource("3_jhtj8")
+text = "Admin
+"
+
+[node name="Kids" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 58.5714
+offset_top = 87.1429
+offset_right = 225.571
+offset_bottom = 107.143
+theme = ExtResource("3_jhtj8")
+text = "Kids"
+
+[node name="Add" type="Button" parent="Control"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+offset_left = 58.5714
+offset_top = 117.143
+offset_right = 223.571
+offset_bottom = 137.143
+theme = ExtResource("3_jhtj8")
+text = "+"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Admin" to="." method="_on_admin_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/Admin" to="." method="_on_admin_pressed"]
