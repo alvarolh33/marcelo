@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl34eh7cuqfrk"]
+
+[ext_resource type="Texture2D" uid="uid://dnkukfhfwvwvh" path="res://gfx/ui/gui/black.png" id="1_n5l6o"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -71.0
+offset_right = -122.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 46.0
+offset_bottom = 23.0
+scale = Vector2(0.505, 0.505)
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(238.614, 0)
+scale = Vector2(3.51964, 1.9802)
+texture = ExtResource("1_n5l6o")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Vidas:"
+vertical_alignment = 1
+
+[node name="n_vidas" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1

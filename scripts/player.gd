@@ -2,8 +2,12 @@ extends Entity
 
 var attack_in_cooldown: bool = false
 @onready var attack_hitbox = $AttackHitbox/CollisionShape2D
+var scene_hud = preload("res://scenes/hud.tscn")
+var hud
 
 func _ready():
+	hud = scene_hud.instantiate()
+	add_child(hud)
 	position = Vector2.ZERO
 
 func _process(delta):
@@ -32,7 +36,8 @@ func trying_to_attack():
 	return Input.is_action_just_pressed("attack") && !attack_in_cooldown
 
 func _on_death_area_entered(body):
-	super.die()
+	pass
+	#super.die()
 
 func attack():
 	var overlapping_objects = $AttackHitbox.get_overlapping_areas()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bqpv8ei121ql0"]
+[gd_scene load_steps=18 format=3 uid="uid://bqpv8ei121ql0"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_834vw"]
 [ext_resource type="Texture2D" uid="uid://dwdgb2dq2f6fn" path="res://gfx/tileset/Dungeon_Tileset.png" id="1_nboup"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bs3o0anp647nt" path="res://gfx/items/peaks/peaks_2.png" id="4_gt6or"]
 [ext_resource type="Texture2D" uid="uid://blku8nhnf3qds" path="res://gfx/items/peaks/peaks_3.png" id="5_vi3w1"]
 [ext_resource type="Texture2D" uid="uid://iad76krdvvrw" path="res://gfx/items/peaks/peaks_4.png" id="6_o4max"]
-[ext_resource type="Texture2D" uid="uid://dnkukfhfwvwvh" path="res://gfx/ui/gui/black.png" id="8_41grv"]
 [ext_resource type="PackedScene" uid="uid://cci2o4hfatxwf" path="res://scenes/death_area.tscn" id="10_gxg2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wc528"]
@@ -388,30 +387,6 @@ layer_1/tile_data = PackedInt32Array(-1048577, 393216, 6, -1114112, 458752, 6)
 position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="Control" type="Control" parent="Player/Camera2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -124.0
-offset_top = -72.0
-offset_right = 122.0
-offset_bottom = 67.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D/Control"]
-layout_mode = 1
-offset_right = 46.0
-offset_bottom = 23.0
-scale = Vector2(0.505, 0.505)
-
-[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/Control/HBoxContainer"]
-position = Vector2(238.614, 0)
-scale = Vector2(3.51964, 1.9802)
-texture = ExtResource("8_41grv")
-
-[node name="Label" type="Label" parent="Player/Camera2D/Control/HBoxContainer"]
-layout_mode = 2
-text = "Vidas:"
-vertical_alignment = 1
 
 [node name="Slimes" type="Node" parent="."]
 
