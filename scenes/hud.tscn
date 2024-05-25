@@ -26,12 +26,28 @@ position = Vector2(238.614, 0)
 scale = Vector2(3.51964, 1.9802)
 texture = ExtResource("1_n5l6o")
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="hearts" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = "Vidas:"
+text = "hp:"
 vertical_alignment = 1
 
 [node name="n_vidas" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1
+
+[node name="gold" type="HBoxContainer" parent="."]
+offset_left = 47.455
+offset_right = 111.455
+offset_bottom = 23.0
+scale = Vector2(0.505, 0.505)
+
+[node name="gold_label" type="Label" parent="gold"]
+layout_mode = 2
+text = "gold:"
+vertical_alignment = 1
+
+[node name="n_gold" type="Label" parent="gold"]
 layout_mode = 2
 text = "0"
 vertical_alignment = 1

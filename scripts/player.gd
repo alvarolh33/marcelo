@@ -4,11 +4,12 @@ var attack_in_cooldown: bool = false
 @onready var attack_hitbox = $AttackHitbox/CollisionShape2D
 var scene_hud = preload("res://scenes/hud.tscn")
 var hud
+var gold: int = 0
 
 func _ready():
 	hud = scene_hud.instantiate()
 	add_child(hud)
-	hud.set_vidas(vidas)
+	hud.set_hp(vidas)
 	position = Vector2.ZERO
 
 func _process(delta):
@@ -38,6 +39,10 @@ func trying_to_attack():
 
 func _on_death_area_entered(body):
 	super.die()
+
+func add_gold(a):
+	gold += a
+	hud.set_gold(gold)
 
 func attack():
 	var overlapping_objects = $AttackHitbox.get_overlapping_areas()
