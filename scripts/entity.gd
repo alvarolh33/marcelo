@@ -12,11 +12,17 @@ var prev_direction: Vector2 = Vector2.ZERO
 var vidas: int = 3
 var received_damage: int = 0
 
+func add_hp(a):
+	if vidas + a < 0:
+		vidas = 0
+	else:
+		vidas += a
+
 func take_damage():
 	if received_damage == 0:
 		received_damage = 20
 		animated_sprite.modulate = Color(1.0, 0.0, 0.0, 0.5)
-	vidas -= 1
+	add_hp(-1)
 	print("AAA me pegaron")
 	print(self , " tengo " , vidas)
 	if vidas < 0:
@@ -80,6 +86,8 @@ func attack():
 	print("Estoy atacando")
 
 func select_animation(dir: Vector2, prev_dir: Vector2, anim_sprite: AnimatedSprite2D):
+	if anim_sprite == null:
+		return
 	if dir.length() == 0:
 		if abs(prev_dir.x) > abs(prev_dir.y):
 			if is_attacking:

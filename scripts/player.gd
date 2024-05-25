@@ -14,6 +14,8 @@ func _ready():
 
 func _process(delta):
 	super(delta)
+	if animated_sprite == null:
+		return
 	match animated_sprite.animation:
 		"IdleUp", "WalkUp":
 			attack_hitbox.rotation = -(PI / 2)
@@ -40,18 +42,24 @@ func trying_to_attack():
 func _on_death_area_entered(body):
 	super.die()
 
+func add_hp(a):
+	super(a)
+	hud.set_hp(vidas)
+
 func add_gold(a):
 	gold += a
+	if gold < 0:
+		gold = 0
 	if hud != null:
 		hud.set_gold(gold)
 
 func attack():
+	if $AttackHitbox == null:
+		return
 	var overlapping_objects = $AttackHitbox.get_overlapping_areas()
 	for area in overlapping_objects:
 		if area.is_in_group("enemy"):
 			area.get_parent().take_damage()
-	
-	#$Area2D/CollisionShape2D.disabled = true
 	
 	is_attacking = true
 	attack_in_cooldown = true

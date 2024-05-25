@@ -413,18 +413,30 @@ shape = SubResource("RectangleShape2D_b1lut")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("3_kqmgs")]
-position = Vector2(-39, 25)
+position = Vector2(-45, 19)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("3_kqmgs")]
-position = Vector2(-62, -3)
+position = Vector2(-67, -9)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("3_kqmgs")]
-position = Vector2(-38, -25)
+position = Vector2(-33, -27)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("3_kqmgs")]
-position = Vector2(37, 5)
+position = Vector2(43, 8)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("3_kqmgs")]
-position = Vector2(52, -19)
+position = Vector2(60, -20)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("3_kqmgs")]
+position = Vector2(-50, -178)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("3_kqmgs")]
+position = Vector2(37, -166)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("3_kqmgs")]
+position = Vector2(32, -217)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("3_kqmgs")]
+position = Vector2(-25, -212)
 
 [connection signal="body_entered" from="DeathArea" to="Player" method="_on_death_area_entered"]
