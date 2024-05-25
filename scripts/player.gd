@@ -8,6 +8,7 @@ var hud
 func _ready():
 	hud = scene_hud.instantiate()
 	add_child(hud)
+	hud.set_vidas(vidas)
 	position = Vector2.ZERO
 
 func _process(delta):
@@ -36,8 +37,7 @@ func trying_to_attack():
 	return Input.is_action_just_pressed("attack") && !attack_in_cooldown
 
 func _on_death_area_entered(body):
-	pass
-	#super.die()
+	super.die()
 
 func attack():
 	var overlapping_objects = $AttackHitbox.get_overlapping_areas()
