@@ -413,9 +413,20 @@ layout_mode = 2
 text = "Vidas:"
 vertical_alignment = 1
 
-[node name="Slime" parent="." groups=["Hit"] instance=ExtResource("4_384o4")]
+[node name="Slimes" type="Node" parent="."]
+
+[node name="Slime" parent="Slimes" groups=["Hit"] instance=ExtResource("4_384o4")]
 position = Vector2(-54, 39)
 collision_layer = 4
+
+[node name="Slime2" parent="Slimes" instance=ExtResource("4_384o4")]
+position = Vector2(-73, -199)
+
+[node name="Slime3" parent="Slimes" instance=ExtResource("4_384o4")]
+position = Vector2(67, -203)
+
+[node name="Slime4" parent="Slimes" instance=ExtResource("4_384o4")]
+position = Vector2(0, -238)
 
 [node name="DeathArea" parent="." instance=ExtResource("10_gxg2u")]
 collision_mask = 6

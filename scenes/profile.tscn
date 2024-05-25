@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://w068qx3cet6b"]
+[gd_scene load_steps=4 format=3 uid="uid://w068qx3cet6b"]
 
 [ext_resource type="Script" path="res://scripts/profile.gd" id="1_hqc3i"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_7xwy1"]
+[ext_resource type="Theme" uid="uid://chvahglekuifq" path="res://gui_theme.tres" id="3_jhtj8"]
 
 [node name="Profile" type="Node2D"]
 script = ExtResource("1_hqc3i")
@@ -35,6 +36,7 @@ offset_left = 51.0
 offset_top = 27.0
 offset_right = 217.0
 offset_bottom = 127.0
+scale = Vector2(1, 1.16)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -42,20 +44,24 @@ layout_mode = 2
 [node name="player1" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(165, 20)
 layout_mode = 2
+theme = ExtResource("3_jhtj8")
 text = "Player 1"
 
 [node name="Admin" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jhtj8")
 text = "Admin
 "
 
 [node name="Kids" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jhtj8")
 text = "Kids"
 
 [node name="Add" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(165, 20)
 layout_mode = 2
+theme = ExtResource("3_jhtj8")
 text = "+"
 
 [node name="Settings" type="Button" parent="."]

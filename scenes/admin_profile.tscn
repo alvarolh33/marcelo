@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://06lkmm35tkfe"]
+[gd_scene load_steps=6 format=3 uid="uid://06lkmm35tkfe"]
 
 [ext_resource type="Script" path="res://scripts/admin_profile.gd" id="1_d0bc0"]
+[ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="2_ikpyo"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_tfajy"]
+[ext_resource type="FontFile" uid="uid://c4u1ugc4348y7" path="res://gfx/ui/MinimalPixel v2.ttf" id="3_3etk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iwrx1"]
+font = ExtResource("3_3etk7")
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="AdminProfile" type="Node2D"]
 script = ExtResource("1_d0bc0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.4, 3.6)
+texture = ExtResource("2_ikpyo")
+expand_mode = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 offset_right = 256.0
@@ -15,6 +30,7 @@ alignment = 1
 layout_mode = 2
 text = "Admin 
 "
+label_settings = SubResource("LabelSettings_iwrx1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 24.0
