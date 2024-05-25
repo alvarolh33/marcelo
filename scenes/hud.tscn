@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_ctc45")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 46.0
 offset_bottom = 23.0
 scale = Vector2(0.505, 0.505)
@@ -37,6 +38,7 @@ text = "0"
 vertical_alignment = 1
 
 [node name="gold" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 47.455
 offset_right = 111.455
 offset_bottom = 23.0

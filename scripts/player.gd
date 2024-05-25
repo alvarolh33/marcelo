@@ -42,7 +42,8 @@ func _on_death_area_entered(body):
 
 func add_gold(a):
 	gold += a
-	hud.set_gold(gold)
+	if hud != null:
+		hud.set_gold(gold)
 
 func attack():
 	var overlapping_objects = $AttackHitbox.get_overlapping_areas()
