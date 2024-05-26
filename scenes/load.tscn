@@ -35,6 +35,7 @@ theme = ExtResource("3_ueu0h")
 text = "Game 1"
 
 [node name="Game2" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 47.1429
 offset_top = 52.8571
 offset_right = 213.142

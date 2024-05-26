@@ -58,17 +58,16 @@ func save():
 	return save_dict
 
 func save_game():
-	var save_game = FileAccess.open(save_game_path, FileAccess.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	var save = FileAccess.open(save_game_path, FileAccess.WRITE)
 	var json_string = JSON.stringify(save())
-	save_game.store_line(json_string)
+	save.store_line(json_string)
 
 func load_game():
 	print("PLAYER cargando: " + save_game_path)
 	if not FileAccess.file_exists(save_game_path):
 		return # Error! We don't have a save to load.
-	var save_game = FileAccess.open(save_game_path, FileAccess.READ)
-	var json_string = save_game.get_line()
+	var save = FileAccess.open(save_game_path, FileAccess.READ)
+	var json_string = save.get_line()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
 	

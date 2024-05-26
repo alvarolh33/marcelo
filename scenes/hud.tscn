@@ -55,6 +55,7 @@ text = "0"
 vertical_alignment = 1
 
 [node name="saveGame" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 187.285
 offset_top = 4.0
 offset_right = 357.285
@@ -67,6 +68,7 @@ text = "<f2> to save the game"
 vertical_alignment = 1
 
 [node name="Exit" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 124.795
 offset_top = 4.0
 offset_right = 298.795
