@@ -1,5 +1,6 @@
 extends Entity
 
+var save_game_path := "res://save_games/game1.save"
 var attack_in_cooldown: bool = false
 @onready var attack_hitbox = $AttackHitbox/CollisionShape2D
 var scene_hud = preload("res://scenes/hud.tscn")
@@ -11,6 +12,7 @@ func _ready():
 	add_child(hud)
 	hud.set_hp(vidas)
 	position = Vector2.ZERO
+	load_game()
 
 func _process(delta):
 	super(delta)
@@ -35,6 +37,42 @@ func _process(delta):
 		speed = 100
 	else:
 		speed = 70
+
+func save():
+	var save_dict = {
+		"gold" : gold,
+		"hp" : vidas,
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+	}
+	return save_dict
+
+func save_game():
+	var save_game = FileAccess.open(save_game_path, FileAccess.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	var json_string = JSON.stringify(save())
+	save_game.store_line(json_string)
+
+func load_game():
+	if not FileAccess.file_exists(save_game_path):
+		return # Error! We don't have a save to load.
+	var save_game = FileAccess.open(save_game_path, FileAccess.READ)
+	var json_string = save_game.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	
+	if not parse_result == OK:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+	var node_data = json.get_data()
+	print("Intentando cargar posición")
+	position = Vector2(node_data["pos_x"], node_data["pos_y"])
+	for i in node_data.keys():
+		if i == "pos_x" or i == "pos_y":
+			continue
+		set(i, node_data[i])
+	hud.set_hp(vidas)
+	hud.set_gold(gold)
+
 
 func trying_to_attack():
 	return Input.is_action_just_pressed("attack") && !attack_in_cooldown
