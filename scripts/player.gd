@@ -1,6 +1,6 @@
 extends Entity
 
-var save_game_path := "res://save_games/game1.save"
+var save_game_path := "user://save_games/game1.save"
 var attack_in_cooldown: bool = false
 @onready var attack_hitbox = $AttackHitbox/CollisionShape2D
 var scene_hud = preload("res://scenes/hud.tscn")

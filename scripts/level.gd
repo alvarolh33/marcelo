@@ -4,18 +4,22 @@ extends Node2D
 @onready var enemies = $Slimes
 @onready var camera = $Player/Camera2D
 var game: int = 1
-var save_game_path = "res://save_games/game1.save"
+var save_game_path = "user://save_games/game1.save"
+var path = "user://save_games"
 
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
 func set_game_file(game):
-	save_game_path = "res://save_games/game" + str(game) + ".save"
+	save_game_path = "user://save_games/game" + str(game) + ".save"
 	print("level: " + save_game_path)
 	$Player.load_game()
 
 func _ready():
-	pass
+	var dir = DirAccess.open("user://")
+	if !dir.dir_exists(path):
+		print("Directorio creado")
+		dir.make_dir(path)
 
 func _process(delta):
 	if Input.is_action_just_pressed("escape"):
