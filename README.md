@@ -34,5 +34,5 @@ Ejecutar los tests a través de la terminal en Windows es posible, pero es más 
 En primer lugar, localice el ejecutable de Godot en su equipo (el archivo _.exe_). Anótelo y a continuación, localice el directorio raíz del proyecto. A continuación, ejecute el siguiente comando:
 
 ```
-& "[SU_EJECUTABLE_DE_GODOT_AQUI]" -d -s --path "[EL_DIRECTORIO_RAIZ_DEL_PROYECTO_AQUI]" "addons/gut/gut_cmdln.gd"
+& "SU_EJECUTABLE_DE_GODOT_AQUI" -d -s --path "EL_DIRECTORIO_RAIZ_DEL_PROYECTO_AQUI" "addons/gut/gut_cmdln.gd"
 ```
