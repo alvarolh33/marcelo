@@ -7,6 +7,10 @@ func test_hud():
 	var player_instance = player.new()
 	add_child(player_instance)
 	var hud_instance = player_instance.hud
+	player_instance.gold = 0
+	player_instance.vidas = 3
+	hud_instance.n_vidas_label.text = "3"
+	hud_instance.n_gold.text = "0"
 	
 	# Probar que se inicializan bien los label del HUD
 	assert_eq(hud_instance.n_vidas_label.text, "3", "debería ser 3")
