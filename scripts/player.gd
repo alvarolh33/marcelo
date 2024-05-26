@@ -2,6 +2,7 @@ extends Entity
 
 var save_game_path := "user://save_games/game1.save"
 var attack_in_cooldown: bool = false
+var save_in_cooldown: bool = false
 @onready var attack_hitbox = $AttackHitbox/CollisionShape2D
 var scene_hud = preload("res://scenes/hud.tscn")
 var hud
@@ -40,11 +41,12 @@ func _process(delta):
 	else:
 		speed = 70
 		
-	if !attack_in_cooldown && Input.is_action_pressed("save_game"):
+	if !save_in_cooldown && Input.is_action_pressed("save_game"):
 		save_game()
 		print("Save game")
-		attack_in_cooldown = true
-		$AttackCooldown.start()
+		save_in_cooldown = true
+		hud.set_saveLabel("Saving game...")
+		$SaveGameCooldown.start()
 
 func save():
 	var save_dict = {
@@ -122,3 +124,8 @@ func _on_attacking_timeout():
 
 func _on_attack_cooldown_timeout():
 	attack_in_cooldown = false
+
+
+func _on_save_game_cooldown_timeout():
+	hud.set_saveLabel("<f2> to save the game")
+	save_in_cooldown = false

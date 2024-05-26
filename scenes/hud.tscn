@@ -53,3 +53,27 @@ vertical_alignment = 1
 layout_mode = 2
 text = "0"
 vertical_alignment = 1
+
+[node name="saveGame" type="HBoxContainer" parent="."]
+offset_left = 187.285
+offset_top = 4.0
+offset_right = 357.285
+offset_bottom = 27.0
+scale = Vector2(0.3, 0.3)
+
+[node name="save" type="Label" parent="saveGame"]
+layout_mode = 2
+text = "<f2> to save the game"
+vertical_alignment = 1
+
+[node name="Exit" type="HBoxContainer" parent="."]
+offset_left = 124.795
+offset_top = 4.0
+offset_right = 298.795
+offset_bottom = 27.0
+scale = Vector2(0.3, 0.3)
+
+[node name="esc" type="Label" parent="Exit"]
+layout_mode = 2
+text = "<esc> to exit the game"
+vertical_alignment = 1
