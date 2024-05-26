@@ -8,7 +8,7 @@ var key_4 = "_"
 var next = 1
 var disguise = 0
 
-func _process(delta):
+func _process(_delta):
 	
 	$L_Key_1.text = str(key_1)
 	$L_Key_2.text = str(key_2)
