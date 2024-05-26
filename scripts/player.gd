@@ -37,6 +37,12 @@ func _process(delta):
 		speed = 100
 	else:
 		speed = 70
+		
+	if !attack_in_cooldown && Input.is_action_pressed("save_game"):
+		save()
+		print("Save game")
+		attack_in_cooldown = true
+		$AttackCooldown.start()
 
 func save():
 	var save_dict = {
