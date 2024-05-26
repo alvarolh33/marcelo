@@ -12,6 +12,7 @@ func _ready():
 	add_child(hud)
 	hud.set_hp(vidas)
 	position = Vector2.ZERO
+	load_game()
 	hud.set_hp(vidas)
 	hud.set_gold(gold)
 
@@ -40,7 +41,7 @@ func _process(delta):
 		speed = 70
 		
 	if !attack_in_cooldown && Input.is_action_pressed("save_game"):
-		save()
+		save_game()
 		print("Save game")
 		attack_in_cooldown = true
 		$AttackCooldown.start()
