@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://s0a60icooh80"]
+
+[ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="1_3xigs"]
+[ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_7aygi"]
+[ext_resource type="Script" path="res://scripts/load.gd" id="2_kwscx"]
+
+[node name="Load" type="Node2D"]
+script = ExtResource("2_kwscx")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(128, 72)
+scale = Vector2(0.888889, 0.9)
+texture = ExtResource("1_3xigs")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 256.0
+offset_bottom = 23.0
+text = "Cargar Partida"
+horizontal_alignment = 1
+
+[node name="Load_1" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 56.0
+
+[node name="Back" type="Button" parent="Load_1"]
+offset_left = -48.0
+offset_top = 88.0
+offset_right = -32.0
+offset_bottom = 104.0
+
+[node name="Cross" type="Sprite2D" parent="Load_1/Back"]
+position = Vector2(8, 8)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7aygi")
+hframes = 16
+vframes = 2
+frame = 11
+
+[node name="Load_2" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 88.0
+
+[node name="Load_3" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 120.0
+
+[connection signal="pressed" from="Load_1/Back" to="." method="_on_back_pressed"]
