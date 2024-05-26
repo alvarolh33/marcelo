@@ -65,7 +65,7 @@ func save_game():
 func load_game():
 	print("PLAYER cargando: " + save_game_path)
 	if not FileAccess.file_exists(save_game_path):
-		return # Error! We don't have a save to load.
+		return false# Error! We don't have a save to load.
 	var save = FileAccess.open(save_game_path, FileAccess.READ)
 	var json_string = save.get_line()
 	var json = JSON.new()
@@ -73,6 +73,7 @@ func load_game():
 	
 	if not parse_result == OK:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return -1
 	var node_data = json.get_data()
 	print("Intentando cargar posición")
 	position = Vector2(node_data["pos_x"], node_data["pos_y"])
@@ -80,6 +81,9 @@ func load_game():
 		if i == "pos_x" or i == "pos_y":
 			continue
 		set(i, node_data[i])
+	vidas = node_data["hp"]
+	gold = node_data["gold"]
+	return true
 
 
 func trying_to_attack():
@@ -123,7 +127,6 @@ func _on_attacking_timeout():
 
 func _on_attack_cooldown_timeout():
 	attack_in_cooldown = false
-
 
 func _on_save_game_cooldown_timeout():
 	hud.set_saveLabel("<f2> to save the game")
