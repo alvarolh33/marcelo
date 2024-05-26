@@ -26,13 +26,13 @@ func test_hud():
 	assert_eq(player_instance.vidas, 6, "debería ser 6")
 	assert_eq(hud_instance.n_vidas_label.text, "6", "debería ser 6")
 	
-	# Hago pruebas con otros números (vidas nunca será < 0):
+	# Hago pruebas con otros números (vidas nunca será < -1):
 	player_instance.add_hp(-3006)
-	assert_eq(player_instance.vidas, 0, "debería ser 0 pues no puede ser negativo")
-	assert_eq(hud_instance.n_vidas_label.text, "0", "debería ser 0 pues no puede ser negativo")
+	assert_eq(player_instance.vidas, -1, "debería ser -1")
+	assert_eq(hud_instance.n_vidas_label.text, "-1", "debería ser -1 pues no puede ser negativo")
 	player_instance.add_hp(2345563)
-	assert_eq(player_instance.vidas, 2345563, "debería ser 2345563")
-	assert_eq(hud_instance.n_vidas_label.text, "2345563", "debería ser 2345563")
+	assert_eq(player_instance.vidas, 2345562, "debería ser 2345562")
+	assert_eq(hud_instance.n_vidas_label.text, "2345562", "debería ser 2345562")
 	
 	####	Probar ganar/perder dinero en player y en hub:
 	# Compruebo que set_gold de hud funciona

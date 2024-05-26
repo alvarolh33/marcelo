@@ -13,8 +13,8 @@ var vidas: int = 3
 var received_damage: int = 0
 
 func add_hp(a):
-	if vidas + a < 0:
-		vidas = 0
+	if (vidas + a) < -1:
+		vidas = -1
 	else:
 		vidas += a
 
