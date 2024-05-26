@@ -34,7 +34,7 @@ func get_direction() -> Vector2:
 func trying_to_attack():
 	return false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if dead:
 		animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		return
@@ -52,7 +52,7 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-func _process(delta):
+func _process(_delta):
 	if dead:
 		if animated_sprite.animation == "Die" && animated_sprite.frame == 2:
 			animated_sprite.pause()

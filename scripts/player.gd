@@ -58,16 +58,16 @@ func save():
 	return save_dict
 
 func save_game():
-	var save = FileAccess.open(save_game_path, FileAccess.WRITE)
+	var save_file = FileAccess.open(save_game_path, FileAccess.WRITE)
 	var json_string = JSON.stringify(save())
-	save.store_line(json_string)
+	save_file.store_line(json_string)
 
 func load_game():
 	print("PLAYER cargando: " + save_game_path)
 	if not FileAccess.file_exists(save_game_path):
 		return false# Error! We don't have a save to load.
-	var save = FileAccess.open(save_game_path, FileAccess.READ)
-	var json_string = save.get_line()
+	var save_file = FileAccess.open(save_game_path, FileAccess.READ)
+	var json_string = save_file.get_line()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
 	
@@ -89,7 +89,7 @@ func load_game():
 func trying_to_attack():
 	return Input.is_action_just_pressed("attack") && !attack_in_cooldown
 
-func _on_death_area_entered(body):
+func _on_death_area_entered(_body):
 	super.die()
 
 func add_hp(a):
