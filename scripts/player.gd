@@ -12,7 +12,8 @@ func _ready():
 	add_child(hud)
 	hud.set_hp(vidas)
 	position = Vector2.ZERO
-	load_game()
+	hud.set_hp(vidas)
+	hud.set_gold(gold)
 
 func _process(delta):
 	super(delta)
@@ -60,6 +61,7 @@ func save_game():
 	save_game.store_line(json_string)
 
 func load_game():
+	print("PLAYER cargando: " + save_game_path)
 	if not FileAccess.file_exists(save_game_path):
 		return # Error! We don't have a save to load.
 	var save_game = FileAccess.open(save_game_path, FileAccess.READ)
@@ -76,8 +78,6 @@ func load_game():
 		if i == "pos_x" or i == "pos_y":
 			continue
 		set(i, node_data[i])
-	hud.set_hp(vidas)
-	hud.set_gold(gold)
 
 
 func trying_to_attack():
