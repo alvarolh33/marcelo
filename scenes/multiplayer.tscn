@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/multiplayer.gd" id="1_4ioe7"]
 [ext_resource type="Texture2D" uid="uid://ck7dyq4wenuh1" path="res://gfx/ui/gui/background3.png" id="2_qkcwx"]
+[ext_resource type="PackedScene" uid="uid://bylegsp6aisol" path="res://scenes/level_multiplayer.tscn" id="2_tf4bh"]
 [ext_resource type="Texture2D" uid="uid://dstrgdyjjnbja" path="res://gfx/ui/buttons/buttons_1x.png" id="2_urlrf"]
-[ext_resource type="PackedScene" uid="uid://bqpv8ei121ql0" path="res://scenes/level.tscn" id="2_wtcmp"]
 [ext_resource type="Theme" uid="uid://chvahglekuifq" path="res://gui_theme.tres" id="3_evauv"]
 
 [node name="Multiplayer" type="Node2D"]
 script = ExtResource("1_4ioe7")
-player_scene = ExtResource("2_wtcmp")
+player_scene = ExtResource("2_tf4bh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.443137, 0.286275, 0.32549, 0.85098)
@@ -60,7 +60,7 @@ vframes = 2
 frame = 11
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://scenes/level.tscn")
+_spawnable_scenes = PackedStringArray("res://scenes/level_multiplayer.tscn")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="Control/Host" to="." method="_on_host_pressed"]

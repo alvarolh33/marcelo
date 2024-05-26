@@ -8,10 +8,12 @@ func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
+	if !is_multiplayer_authority(): 
+		return
 	pass
 
 func _process(delta):
-	if !is_multiplayer_authority():
+	if !is_multiplayer_authority(): 
 		return
 	if Input.is_action_just_pressed("escape"):
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
